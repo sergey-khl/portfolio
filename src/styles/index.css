@@ -1,0 +1,20 @@
+.meWrapper {
+
+    transition: background-color 1s ease;
+}
+
+.name {
+    color: #61dafb;
+}
+
+.project {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+}
+
+.contact {
+    min-height: 100vh;
+    display: flex;
+    justify-content: space-around;
+}
