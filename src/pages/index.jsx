@@ -6,7 +6,7 @@ import { Project } from '../components/project';
 import { Contact } from '../components/contact';
 import { Experience } from '../components/experience';
 import { Scale } from '../components/scale';
-import { Row, Col, Container } from 'react-bootstrap';
+import { Row, Col, Container, Navbar, Nav, Button } from 'react-bootstrap';
 
 const Me = () => {
     const orange1 = "#fad6a5";
@@ -17,6 +17,7 @@ const Me = () => {
     const blue2 = "#f0fdff";
     const blue3 = "#0c1445";
     const [color, setColor] = useState(orange1);
+    const [collapse, setCollapse] = useState(false);
     const handsRef = useRef(null);
     const fightRef = useRef(null);
     const surgicalRef = useRef(null);
@@ -24,6 +25,8 @@ const Me = () => {
     const qrRef = useRef(null);
     const skillRef = useRef(null);
     const experienceRef = useRef(null);
+
+    
 
     const changeColor = (e) => {
         let trans = document.documentElement.clientHeight/3;
@@ -44,13 +47,57 @@ const Me = () => {
         }
     }
 
+    const navCollapse = (e) => {
+        setCollapse(!collapse);
+    }
+
     useEffect(() => {
         window.addEventListener('scroll', changeColor)
       }, []);
 
 
     return (
-        <div className="meWrapper" style={{backgroundColor: color}}>
+        <div className="meWrapper" id="home" style={{backgroundColor: color}}>
+            <div>
+            <Navbar
+                expand="xl"
+                bg="dark"
+                variant="dark"
+                fixed="top"
+                collapseOnSelect
+                >
+                <Container fluid>
+                    <Navbar.Brand href="#home" className="img-container">
+                        Sergey
+                    </Navbar.Brand>
+
+                    
+
+                    <Navbar.Toggle
+                        className="ml-3 mb-2"
+                        aria-controls="responsive-navbar-nav"
+                        onClick={navCollapse}
+                    />
+                    
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Col md="auto">
+                            <Button className="m-2" variant="outline-primary" size="lg">
+                                <Nav.Link href="#experience">Experience</Nav.Link>
+                            </Button>
+                            <Button className="m-2" variant="outline-primary" size="lg">
+                                <Nav.Link href="#skills">Skills</Nav.Link>
+                            </Button>
+                            <Button className="m-2" variant="outline-primary" size="lg">
+                                <Nav.Link href="#projects">Projects</Nav.Link>
+                            </Button>
+                            <Button className="m-2" variant="primary" size="lg">
+                                <Nav.Link href="#contactMe">Contact Me!</Nav.Link>
+                            </Button>
+                        </Col>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+            </div>
             <div>
                 <h1 className='name'>Sergey</h1>
                 <div className='introWrapper'>
@@ -71,11 +118,25 @@ const Me = () => {
                     </div>   
                 </div>
             </div>
-            <div ref={experienceRef} className="experiences">
-                <h2>Work</h2>
+            <div ref={experienceRef} className="experiences" id="experience">
+                <h2>Work / Internships</h2>
                 <hr/>
                 <Experience>
-                    <h3>home spritz</h3>
+                    <h3>Home Spritz - Software Developer Internship</h3>
+                    <h4>01/2022 - 01/2023</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ullamcorper leo.
+                        Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
+                        viverra tortor vitae, imperdiet urna. Morbi ex lectus, venenatis et nibh sit amet,
+                        venenatis molestie nulla. Cras in hendrerit est. Sed eleifend, nunc eu laoreet scelerisque,
+                        lorem arcu scelerisque justo, ac cursus felis purus non urna. Proin convallis sed justo ut finibus.
+                        Suspendisse tempor id eros a lobortis. Donec cursus id nunc et rhoncus. Cras at nulla est.
+                        Cras vel ante quis ligula tempor eleifend eu eget leo. In hac habitasse platea dictumst. =
+                        Aenean eleifend dignissim gravida. Morbi ut augue nibh. Nam ut auctor nibh. Morbi ante tortor,
+                        dignissim eu arcu bibendum, sodales eleifend risus.</p>
+                </Experience>
+                <Experience>
+                    <h3>University of Alberta - Teaching Assistant</h3>
+                    <h4>09/2021 - current</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ullamcorper leo.
                         Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
                         viverra tortor vitae, imperdiet urna. Morbi ex lectus, venenatis et nibh sit amet,
@@ -89,7 +150,8 @@ const Me = () => {
                 <h2>Education</h2>
                 <hr/>
                 <Experience>
-                    <h3>University of Alberta</h3>
+                    <h3>University of Alberta - Computing Science Honours</h3>
+                    <h4>01/2020 - current</h4>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ullamcorper leo.
                         Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
                         viverra tortor vitae, imperdiet urna. Morbi ex lectus, venenatis et nibh sit amet,
@@ -101,7 +163,7 @@ const Me = () => {
                         dignissim eu arcu bibendum, sodales eleifend risus.</p>
                 </Experience>
             </div>
-            <div ref={skillRef} className="skills">
+            <div ref={skillRef} className="skills" id="skills">
                 <h2>skills</h2>
                 <hr/>
                 <Container>
@@ -113,14 +175,14 @@ const Me = () => {
                     </div>
                     <div className='top-gap'>
                         <Row>
-                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
-                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
+                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
+                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
                         </Row>
                     </div>
                     <div className='top-gap'>
                         <Row>
-                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
-                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
+                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
+                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
                         </Row>
                     </div>
                     <div className='top-gap'>
@@ -131,7 +193,7 @@ const Me = () => {
                     </div>
                 </Container>
             </div>
-            <div className='projects_section'>
+            <div className='projects_section' id="projects">
                 <h2>Projects</h2>
                 <hr/>
                 <div ref={handsRef}>
@@ -156,7 +218,7 @@ const Me = () => {
                 </div>
                 <div ref={fightRef}>
                     <Project>
-                        <h3>stick man game</h3>
+                        <h3>Stick Man Fighter</h3>
                         <div className='right'>
                                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ullamcorper leo.
                             Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
@@ -179,7 +241,7 @@ const Me = () => {
                 </div>
                 <div ref={surgicalRef}>
                     <Project>
-                        <h3>ml surgical tools</h3>
+                        <h3>Surgical Tool Classification</h3>
                         <div className='left'>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ullamcorper leo.
                             Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
@@ -218,7 +280,7 @@ const Me = () => {
                     </Project>
                 </div>
             </div>
-            <div ref={contactRef}>
+            <div ref={contactRef} id="contactMe">
                 {/* might have to do proper form validation */}
                 <Contact/>
             </div>

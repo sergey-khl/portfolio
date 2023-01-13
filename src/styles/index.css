@@ -1,12 +1,22 @@
 .meWrapper {
     transition: background-color 1s ease;
+    padding-top: 56px;
+    scroll-behavior: smooth;
 }
 
+.navbar {
+    height: 56px;
+}
+
+.nav-link-basic {
+    color: '#00FF00';
+    background: '#7600dc';
+}
 
 .name {
     color: #424949 ;
     font-family: 'Raleway',sans-serif;
-    font-size: 62px;
+    font-size: 7vw;
     font-weight: 800;
     line-height: 72px;
     margin: 0 0 24px;
@@ -17,13 +27,30 @@
 .bio {
     color: #616A6B ;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 24px;
+    font-size: 2vw;
     line-height: 32px;
     margin: 12px 50px 24px;
 }
 
 .resume {
     text-align: center;
+}
+
+h1 {
+    font-size: 3.5vw;
+}
+
+h2 {
+    font-size: 3vw;
+}
+
+h3 {
+    font-size: 1vw;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1vw;
 }
 
 hr {
@@ -47,7 +74,7 @@ hr {
 }
 
 .contact {
-    min-height: 100vh;
+    min-height: 90vh;
     justify-content: space-around;
     color: aliceblue;
 }

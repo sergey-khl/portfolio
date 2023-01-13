@@ -32,7 +32,7 @@ export const Contact = (props) => {
             <h2>contact</h2>
             <hr/>
             <Form noValidate validated={validated} onSubmit={handleSubmit} id="emailForm">
-                <Row className="m-0 p-5 justify-content-center text-center">
+                <Row className="m-0 p-4 justify-content-center text-center">
                     <Form.Group as={Col} md="4" controlId="name">
                     <Form.Label>Name</Form.Label>
                     <Form.Control
@@ -53,7 +53,7 @@ export const Contact = (props) => {
                         />
                     </Form.Group>
                 </Row>
-                <Row className="m-0 p-5 justify-content-center text-center">
+                <Row className="m-0 p-4 justify-content-center text-center">
                     <Form.Group as={Col} md="8" controlId="message">
                         <Form.Label>Message</Form.Label>
                         <InputGroup hasValidation>
@@ -68,7 +68,7 @@ export const Contact = (props) => {
                         </InputGroup>
                     </Form.Group>
                 </Row>
-                <div className='text-center p-5'>
+                <div className='text-center p-4'>
                     <Button type="submit">Submit</Button>
                 </div>
                 <div className='text-center p-1'>
