@@ -70,15 +70,11 @@ const Me = () => {
                     <Navbar.Brand href="#home" className="img-container">
                         Sergey
                     </Navbar.Brand>
-
-                    
-
                     <Navbar.Toggle
                         className="ml-3 mb-2"
                         aria-controls="responsive-navbar-nav"
                         onClick={navCollapse}
                     />
-                    
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Col md="auto">
                             <Button className="m-2" variant="outline-primary" size="lg">
@@ -166,29 +162,30 @@ const Me = () => {
             <div ref={skillRef} className="skills" id="skills">
                 <h2>skills</h2>
                 <hr/>
+                {/* may have to update so works with phones */}
                 <Container>
                     <div className='top-gap'>
                         <Row>
-                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="green"/></Col>
-                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="green"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="green"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="green"/></Col>
                         </Row>
                     </div>
                     <div className='top-gap'>
                         <Row>
-                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
-                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="blue"/></Col>
                         </Row>
                     </div>
                     <div className='top-gap'>
                         <Row>
-                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
-                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="yellow"/></Col>
                         </Row>
                     </div>
                     <div className='top-gap'>
                         <Row>
-                            <Col className="me-5"><h3>javascript</h3><Scale progress="40" variant="purple"/></Col>
-                            <Col className="ms-5"><h3>javascript</h3><Scale progress="40" variant="purple"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="purple"/></Col>
+                            <Col className="mx-4"><h3>javascript</h3><Scale progress="40" variant="purple"/></Col>
                         </Row>
                     </div>
                 </Container>
@@ -204,11 +201,7 @@ const Me = () => {
                             Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
                             viverra tortor vitae, imperdiet urna. Morbi ex lectus, venenatis et nibh sit amet,
                             venenatis molestie nulla. Cras in hendrerit est. Sed eleifend, nunc eu laoreet scelerisque,
-                            lorem arcu scelerisque justo, ac cursus felis purus non urna. Proin convallis sed justo ut finibus.
-                            Suspendisse tempor id eros a lobortis. Donec cursus id nunc et rhoncus. Cras at nulla est.
-                            Cras vel ante quis ligula tempor eleifend eu eget leo. In hac habitasse platea dictumst. =
-                            Aenean eleifend dignissim gravida. Morbi ut augue nibh. Nam ut auctor nibh. Morbi ante tortor,
-                            dignissim eu arcu bibendum, sodales eleifend risus.</p>
+                            </p>
                             <div className='demo'>
 
                             </div> 
@@ -274,14 +267,14 @@ const Me = () => {
                         Aenean eleifend dignissim gravida. Morbi ut augue nibh. Nam ut auctor nibh. Morbi ante tortor,
                         dignissim eu arcu bibendum, sodales eleifend risus.</p>
                         </div>
-                    <video width="750" height="500" controls className='right'>
+                    <video width="750" height="60%" controls className='right'>
                         <source src="result.mp4" type="video/mp4"/>
                     </video>
                     </Project>
                 </div>
             </div>
             <div ref={contactRef} id="contactMe">
-                {/* might have to do proper form validation */}
+                {/* TODO: proper form validation */}
                 <Contact/>
             </div>
         </div>

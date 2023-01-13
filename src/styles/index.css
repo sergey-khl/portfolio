@@ -16,7 +16,7 @@
 .name {
     color: #424949 ;
     font-family: 'Raleway',sans-serif;
-    font-size: 7vw;
+    font-size: 10vh;
     font-weight: 800;
     line-height: 72px;
     margin: 0 0 24px;
@@ -27,7 +27,7 @@
 .bio {
     color: #616A6B ;
     font-family: 'Source Sans Pro', sans-serif;
-    font-size: 2vw;
+    font-size: 3vh;
     line-height: 32px;
     margin: 12px 50px 24px;
 }
@@ -37,20 +37,24 @@
 }
 
 h1 {
-    font-size: 3.5vw;
+    font-size: 3.5vh;
 }
 
 h2 {
-    font-size: 3vw;
+    font-size: 3vh;
 }
 
 h3 {
-    font-size: 1vw;
+    font-size: 2vh;
+}
+
+h3 {
+    font-size: 1vh;
     font-weight: bold;
 }
 
 p {
-    font-size: 1vw;
+    font-size: 2vh;
 }
 
 hr {
