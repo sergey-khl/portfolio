@@ -3,12 +3,14 @@ import './App.css';
 import { BrowserRouter as Router, Routes, Route}
     from 'react-router-dom';
 import Me from './pages';
+
   
 function App() {
     return (
         <Router>
             <Routes>
                 <Route exact path='/' element={<Me />} />
+                <Route path='/stick-game' element={<Me />} />
             </Routes>
         </Router>
     );
