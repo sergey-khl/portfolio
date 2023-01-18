@@ -9,15 +9,18 @@ import { Scale } from '../components/scale';
 import { Row, Col, Container, Navbar, Nav, Button } from 'react-bootstrap';
 
 const Me = () => {
-    const orange1 = "#fad6a5";
-    const orange3 = "#f7c16a";
-    const orange4 = "#DB6356";
-    const white = "#f2f2f2";
-    const blue1 = "#c7e1e5";
-    const blue2 = "#f0fdff";
+    const orange1 = "#FFF4BC";
+    const orange2 = "#f7c16a";
+    const orange3 = "#FF8C4C";
+    const red = "#DB6356";
+    const white1 = "#FBFCFC";
+    const white2 = "#ECF0F1";
+    const blue1 = "#f0fdff";
+    const blue2 = "#c7e1e5";
     const blue3 = "#0c1445";
     const [color, setColor] = useState(orange1);
     const [collapse, setCollapse] = useState(false);
+    const robotRef = useRef(null);
     const handsRef = useRef(null);
     const fightRef = useRef(null);
     const surgicalRef = useRef(null);
@@ -25,23 +28,26 @@ const Me = () => {
     const qrRef = useRef(null);
     const skillRef = useRef(null);
     const experienceRef = useRef(null);
-
     
 
     const changeColor = (e) => {
         let trans = document.documentElement.clientHeight/3;
-        if (handsRef.current.getBoundingClientRect().top > trans) {
+        if (experienceRef.current.getBoundingClientRect().top > trans) {
             setColor(orange1);
-        } else if (handsRef.current.getBoundingClientRect().top <= trans && handsRef.current.getBoundingClientRect().top + handsRef.current.getBoundingClientRect().height > trans) {
-            setColor(white);
-        } else if (fightRef.current.getBoundingClientRect().top <= trans && fightRef.current.getBoundingClientRect().top + fightRef.current.getBoundingClientRect().height > trans) {
-            setColor(blue2);
-        } else if (surgicalRef.current.getBoundingClientRect().top <= trans && surgicalRef.current.getBoundingClientRect().top + surgicalRef.current.getBoundingClientRect().height > trans) {
-            setColor(blue1);
-        } else if (qrRef.current.getBoundingClientRect().top <= trans && qrRef.current.getBoundingClientRect().top + qrRef.current.getBoundingClientRect().height > trans) {
-            setColor(orange3);
+        } else if (experienceRef.current.getBoundingClientRect().top <= trans && experienceRef.current.getBoundingClientRect().top + experienceRef.current.getBoundingClientRect().height > trans) {
+            setColor(white1);
         } else if (skillRef.current.getBoundingClientRect().top <= trans && skillRef.current.getBoundingClientRect().top + skillRef.current.getBoundingClientRect().height > trans) {
-            setColor(orange4);
+            setColor(white2);
+        } else if (robotRef.current.getBoundingClientRect().top <= trans && robotRef.current.getBoundingClientRect().top + robotRef.current.getBoundingClientRect().height > trans) {
+            setColor(blue1);
+        } else if (handsRef.current.getBoundingClientRect().top <= trans && handsRef.current.getBoundingClientRect().top + handsRef.current.getBoundingClientRect().height > trans) {
+            setColor(blue2);
+        } else if (fightRef.current.getBoundingClientRect().top <= trans && fightRef.current.getBoundingClientRect().top + fightRef.current.getBoundingClientRect().height > trans) {
+            setColor(orange2);
+        } else if (surgicalRef.current.getBoundingClientRect().top <= trans && surgicalRef.current.getBoundingClientRect().top + surgicalRef.current.getBoundingClientRect().height > trans) {
+            setColor(orange3);
+        } else if (qrRef.current.getBoundingClientRect().top <= trans && qrRef.current.getBoundingClientRect().top + qrRef.current.getBoundingClientRect().height > trans) {
+            setColor(red);
         } else if (contactRef.current.getBoundingClientRect().top <= trans && contactRef.current.getBoundingClientRect().top + contactRef.current.getBoundingClientRect().height > trans) {
             setColor(blue3);
         }
@@ -193,6 +199,22 @@ const Me = () => {
             <div className='projects_section' id="projects">
                 <h2>Projects</h2>
                 <hr/>
+                <div ref={robotRef}>
+                    <Project>
+                        <h3>ROBOTS</h3>
+                        <div className='right'>
+                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam a ullamcorper leo.
+                            Nam eleifend nisi id est tincidunt, nec pulvinar quam imperdiet. Donec ut enim malesuada,
+                            viverra tortor vitae, imperdiet urna. Morbi ex lectus, venenatis et nibh sit amet,
+                            venenatis molestie nulla. Cras in hendrerit est. Sed eleifend, nunc eu laoreet scelerisque,
+                            </p>
+
+                        </div>
+                        <video width="750" height="60%" controls className='mid'>
+                            <source src="2m.mp4" type="video/mp4"/>
+                        </video>
+                    </Project>
+                </div>
                 <div ref={handsRef}>
                     <Project>
                         <h3>Window Media Manipulation With Hand Gestures</h3>
@@ -267,9 +289,9 @@ const Me = () => {
                         Aenean eleifend dignissim gravida. Morbi ut augue nibh. Nam ut auctor nibh. Morbi ante tortor,
                         dignissim eu arcu bibendum, sodales eleifend risus.</p>
                         </div>
-                    <video width="750" height="60%" controls className='right'>
-                        <source src="result.mp4" type="video/mp4"/>
-                    </video>
+                        <video width="750" height="60%" controls className='right'>
+                            <source src="result.mp4" type="video/mp4"/>
+                        </video>
                     </Project>
                 </div>
             </div>
