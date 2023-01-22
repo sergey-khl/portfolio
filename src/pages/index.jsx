@@ -208,11 +208,15 @@ const Me = () => {
                             viverra tortor vitae, imperdiet urna. Morbi ex lectus, venenatis et nibh sit amet,
                             venenatis molestie nulla. Cras in hendrerit est. Sed eleifend, nunc eu laoreet scelerisque,
                             </p>
-
+                            <a href='https://sergey-khl.github.io/quacksite' rel='noopener noreferrer' className="btn btn-outline-info btn-lg" role="button">
+                                Report 1&nbsp;
+                                <i className="bi bi-file-text"></i>
+                            </a>
                         </div>
-                        <video width="750" height="60%" controls className='mid'>
-                            <source src="2m.mp4" type="video/mp4"/>
-                        </video>
+                        <div className='demo'>
+    
+                                <img width="30%" height="54%" src="DUCK.jpg" class="img-fluid" alt="Responsive image"></img>
+                        </div>
                     </Project>
                 </div>
                 <div ref={handsRef}>
@@ -245,7 +249,7 @@ const Me = () => {
                             Aenean eleifend dignissim gravida. Morbi ut augue nibh. Nam ut auctor nibh. Morbi ante tortor,
                             dignissim eu arcu bibendum, sodales eleifend risus.</p>
                             <div className='demo'>
-                                <a href='http://localhost:8080/stickgame' target='_blank' rel='noopener noreferrer' className="btn btn-outline-info btn-lg" role="button">
+                                <a href='https://sergey-khl.github.io/stickgame' target='_blank' rel='noopener noreferrer' className="btn btn-outline-info btn-lg" role="button">
                                     Game&nbsp;
                                     <i className="bi bi-controller"></i>
                                 </a>
